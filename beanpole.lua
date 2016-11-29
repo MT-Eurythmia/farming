@@ -74,7 +74,7 @@ minetest.register_node("farming:beanpole", {
 
 	on_place = function(itemstack, placer, pointed_thing)
 
-		if minetest.is_protected(pointed_thing.under, placer:get_player_name()) then
+		if minetest.is_protected(pointed_thing.above, placer:get_player_name()) then
 			return
 		end
 
