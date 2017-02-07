@@ -23,6 +23,10 @@ minetest.register_craftitem("farming:beans", {
 		if nodename == "farming:beanpole" then
 			minetest.set_node(pointed_thing.under, {name = "farming:beanpole_1"})
 
+			minetest.log("action", placer:get_player_name() .. " places node " 
+			             .. "farming:beanpole_1" .. " at "
+			             .. minetest.pos_to_string(pointed_thing.under))
+
 			minetest.sound_play("default_place_node", {pos = pointed_thing.above, gain = 1.0})
 		else
 			return

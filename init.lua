@@ -572,6 +572,9 @@ function farming.place_seed(itemstack, placer, pointed_thing, plantname)
 
 		minetest.set_node(pt.above, {name = plantname, param2 = 1})
 
+		minetest.log("action", placer:get_player_name() .. " places node " 
+		             .. plantname .. " at " .. minetest.pos_to_string(pt.above))
+
 		minetest.sound_play("default_place_node", {pos = pt.above, gain = 1.0})
 
 		if not minetest.setting_getbool("creative_mode") then
